@@ -189,11 +189,30 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"js/main.js":[function(require,module,exports) {
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"js/joe.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.bro = void 0;
+
+var bro = function bro(greeting) {
+  console.log(greeting);
+};
+
+exports.bro = bro;
+},{}],"js/main.js":[function(require,module,exports) {
 "use strict";
 
 require("../styles/main.scss");
-},{"../styles/main.scss":"styles/main.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+require("./joe.js");
+
+var _joe2 = require("./joe");
+
+(0, _joe2.bro)('yo');
+},{"../styles/main.scss":"styles/main.scss","./joe.js":"js/joe.js","./joe":"js/joe.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -221,7 +240,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53778" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65419" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
